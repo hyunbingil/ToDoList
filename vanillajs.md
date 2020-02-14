@@ -92,5 +92,16 @@ ex) seconds < 10 ? `0${seconds}` : seconds
 
 ### querySelector()
 : 원하는 셀렉터는 다 가져온다. 클래스, css 방식으로... 클래스, 태그, 아이디...등
+~> 찾은 첫번째 것을 가져옴.
 
-### querySelector()
+### querySelectorall()
+: 모든걸 가져온다. 클래스명에 따른 element들을 가져오는데 array로 준다.
+
+### get element by ID, get element by tag name
+: input, body, html, div, section 등. . .
+
+-------------------------------------
+
+### local storage
+: javascript의 작은 정보를 컴퓨터에 저장하는 것
+ex) 시계 = 참/거짓, 사람이름 등..!
