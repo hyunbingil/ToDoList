@@ -1,6 +1,6 @@
-const toDoForm = document.querySelector(".js-toDoForm"),
-    toDoInput = toDoForm.querySelector("input"),
-    toDoList = document.querySelector(".js-toDoList");
+const toDoForm = document.querySelector(".js-toDoForm"), // todo 리스트 적는 곳 전체
+    toDoInput = toDoForm.querySelector("input"), // todo 리스트 적는 부분
+    toDoList = document.querySelector(".js-toDoList"); // todo 리스트 보여주는 곳.
 
 const TODOS_LS = 'toDos';
 
@@ -31,12 +31,12 @@ function paintToDo(text){
     const li = document.createElement("li");
     const delBtn = document.createElement("button");
     const span = document.createElement("span");
-    const newId = toDos.length + 1;
-    delBtn.innerText = "❌";
-    delBtn.addEventListener("click", deleteToDo);
+    const newId = toDos.length + 1; // 배열의 길이 1 늘려주기
+    delBtn.innerText = "❌"; // 버튼에 이거 넣어주기
+    delBtn.addEventListener("click", deleteToDo); // delBtn 클릭시 deleteToDo 실행.
     span.innerText = text;
-    li.appendChild(delBtn);
-    li.appendChild(span);
+    li.appendChild(delBtn); // 버튼 넣기
+    li.appendChild(span); // 뒤에 내용
     li.id = newId;
     toDoList.appendChild(li);
     //span과 delete 버튼을 li안에 append하고 li를 ul에다가 append.
@@ -61,7 +61,7 @@ function loadToDos(){
     if(loadedToDos !== null ){
         const parsedToDos = JSON.parse(loadedToDos);//object로 바꿔줍니당~!
         parsedToDos.forEach(function(toDo){
-            paintToDo(toDo.text);//각각에 대해서 paintToDo라는 function 실행
+            paintToDo(toDo.text); // parsedToDos 각각에 대해서 paintToDo라는 function 실행
         })
         //기본적으로 함수 실행, array에 담겨있는 것들을 각각에 한번씩 함수를 실행시켜주는거!
     }

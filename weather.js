@@ -23,7 +23,7 @@ function getWeather(lat, lon){
 
 
 function saveCoords(coordsObj){
-    localStorage.setItem(COORDS,JSON.stringify(coordsObj));
+    localStorage.setItem(COORDS,JSON.stringify(coordsObj)); // 로컬 스토리지 저장
 }
 function handleGeoSuccess(position){
     const latitude = position.coords.latitude;
@@ -43,7 +43,7 @@ function askForCoords(){
     navigator.geolocation.getCurrentPosition(handleGeoSuccess, handleGeoError);
 }
 function loadCoords(){
-    const loadedCoords = localStorage.getItem(COORDS);
+    const loadedCoords = localStorage.getItem(COORDS); // 가져와
     if(loadedCoords === null){
         askForCoords();
     }
